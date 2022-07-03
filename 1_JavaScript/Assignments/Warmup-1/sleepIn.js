@@ -6,7 +6,7 @@ Return true if we sleep in.
 */
 
 function sleepIn(weekday, vacation){
-  if(vacation == true)
+  if(vacation == true || weekday == false)
   {
     return true;
   }
@@ -18,8 +18,10 @@ function sleepIn(weekday, vacation){
 
 let a = sleepIn(true, true);
 let b = sleepIn(true, false);
-let c = sleepIn(false, false);
+let c = sleepIn(false, true);
+let d = sleepIn(false, false);
 
 console.log(a);
 console.log(b);
 console.log(c);
+console.log(d);
