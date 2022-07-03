@@ -38,3 +38,27 @@ console.log('\ns-- : ',s--);    //decrement
 //Array fundamentals
 let arr = [1,2,3,4,'1'];
 console.log(arr);
+console.log(arr[0]==arr[4]); //compare arrray
+
+//Object
+let o = {
+    id: 'abc123',
+    name: 'abc',
+    age: '20'
+}; 
+
+//String methods
+let str1 = 'Hello Everyone';
+console.log('String length: ',str1.length);
+
+//slice(startIndex, endIndex)
+console.log(str1.slice(6,9));   //6,7,8
+console.log(str1.slice(-8,-2)); //-8,-7,-6,-5,-4,-3
+
+//substring(startIndex, endIndex)
+console.log(str1.substring(6,9));   //6,7,8
+console.log(str1.substring(-2,4)); //0,1,2,3
+
+//substr(startIndex, count)
+console.log(str1.substr(6,2));  //6,7
+console.log(str1.substr(0));    //All
