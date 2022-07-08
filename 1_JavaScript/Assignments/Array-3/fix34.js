@@ -1,7 +1,3 @@
-/*
-
-*/
-
 function fix34(nums){
     i = 0;
     while(i < nums.length && nums[i] != 3)
