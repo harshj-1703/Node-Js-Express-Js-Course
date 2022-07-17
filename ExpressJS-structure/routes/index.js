@@ -1,8 +1,9 @@
 class IndexRoute{ 
     constructor(){ 
-        this.router = require("express").Router(); 
- 
-        this.setRoutes(); 
+        this.router = require("express").Router()
+        this.weatherController = require('../controllers/weather-controller')
+        this.userController = require('../controllers/user-controller');
+        this.setRoutes()
     } 
  
     setRoutes(){ 
@@ -11,9 +12,12 @@ class IndexRoute{
                 status: true, 
                 message: "I got the response",
             }) 
-        }) 
+        })
+        this.router.get('/get-weather',this.weatherController.getWeatherDetails.bind(this.weatherController))
+        
+        this.router.post('/verify-user',this.userController.verifyUser.bind(this.userController))
     } 
 } 
- 
-const router = new IndexRoute() 
+
+const router = new IndexRoute();
 module.exports = router.router;
