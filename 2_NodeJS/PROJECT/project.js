@@ -4,15 +4,15 @@ const colors = require('colors');   //include colors
 const filesystem = require('fs');   //filesystem includes
 const prompt = require('prompt-sync')();    //user input require
 
-console.log('--------------------------------'.red);
+console.log('-------------------------------'.red);
 console.log('Welcome To Notes'.random);
-console.log('--------------------------------'.red);
+console.log('-------------------------------'.red);
 console.log('1. Press 1 For Make File'.green);
 console.log('2. Press 2 For Append File'.green);
 console.log('3. Press 3 For Rename File'.green);
 console.log('4. Press 4 For Read File'.green);
 console.log('5. Press 5 For Delete File'.green);
-console.log('--------------------------------\n'.red);
+console.log('-------------------------------\n'.red);
 
 const input = prompt('Enter Your Choice : '.brightRed);
 
