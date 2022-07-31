@@ -34,7 +34,7 @@ class UserController{
                 age: req.body.age,
             }
             console.log("userData", userData);
-            let queryResponse = await this.userService.createUser(userData);
+            let queryResponse = await this.userservice.createUser(userData);
             if(queryResponse.status)
             {
                 res.status(200).send({
@@ -50,7 +50,7 @@ class UserController{
                 })
             }
         }
-        catch(error){
+        catch(err){
             console.log(err);
             return{
                 status: false,
@@ -78,7 +78,7 @@ class UserController{
                 })
             }
         }
-        catch(error){
+        catch(err){
             console.log(err);
             return{
                 status: false,
@@ -106,7 +106,7 @@ class UserController{
                 })
             }
         }
-        catch(error){
+        catch(err){
             console.log(err);
             return{
                 status: false,
@@ -135,7 +135,7 @@ class UserController{
                 })
             }
         }
-        catch(error){
+        catch(err){
             console.log(err);
             return{
                 status: false,
@@ -148,7 +148,7 @@ class UserController{
     {
         try{
             // let updateUser = req.body.email
-            let updateUser = await this.userService.updateUser(req.body)
+            let updateUser = await this.userservice.updateUser(req.body)
             if(updateUser.status)
             {
                 res.status(200).send({
@@ -164,7 +164,7 @@ class UserController{
                 })
             }
         }
-        catch(error){
+        catch(err){
             console.log(err);
             return{
                 status: false,
