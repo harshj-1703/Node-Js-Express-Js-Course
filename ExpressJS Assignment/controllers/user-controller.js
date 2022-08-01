@@ -75,7 +75,7 @@ class UserController{
             {
                 res.status(400).send({
                     status: false,
-                    message: 'Error in inserting user',
+                    message: 'Error in finding user',
                 })
             }
         }
@@ -178,8 +178,9 @@ class UserController{
         try{
             let userData = {
                 user_id: this.mongoose.Types.ObjectId(req.body.user_id),
-                id_card: req.body.id_card,
-                roll_number: req.body.roll_number
+                // note_id: req.body.note_id,
+                detail: req.body.detail,
+                subject: req.body.subject,
             }
             console.log("userData", userData);
             let queryResponse = await this.userservice.insertUserData(userData);
