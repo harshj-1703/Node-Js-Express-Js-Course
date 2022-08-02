@@ -20,7 +20,7 @@ class IndexRoute{
 
         this.router.get('/find-user/email',this.userController.findUser.bind(this.userController))  //no-need code
 
-        this.router.get('/all-users',this.userController.getuser.bind(this.userController))     //no-need code
+        this.router.get('/all-users',this.userController.getuser.bind(this.userController)) //no-need code
 
         this.router.delete('/delete-users',this.userController.deleteUser.bind(this.userController))    //done
 
