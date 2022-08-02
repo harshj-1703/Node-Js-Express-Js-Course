@@ -120,7 +120,7 @@ class UserService{
 
             return {
                 status: true,
-                data: userEmail,
+                data: userEmail
             }
         }
         catch(err){

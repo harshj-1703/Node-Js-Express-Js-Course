@@ -18,7 +18,7 @@ class IndexRoute{
 
         this.router.post('/create-user',this.userController.createUser.bind(this.userController))   //done
 
-        this.router.get('/find-user/email',this.userController.findUser.bind(this.userController))  //no-need code
+        this.router.get('/find-user',this.userController.findUser.bind(this.userController))  //done
 
         this.router.get('/all-users',this.userController.getuser.bind(this.userController)) //no-need code
 
