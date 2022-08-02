@@ -62,7 +62,7 @@ class UserController{
 
     async findUser(req, res){
         try{
-            let email = req.params.email
+            let email = req.body.email
             let findUser = await this.userservice.findUser(email)
             if(findUser.status)
             {
@@ -91,7 +91,7 @@ class UserController{
     async getuser(req, res)
     {
         try{
-            let allUser = await this.userService.getAllUsers()
+            let allUser = await this.userservice.getAllUsers()
             if(allUser.status)
             {
                 res.status(200).send({
