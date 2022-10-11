@@ -1,38 +1,44 @@
 class UserService{
     constructor(){
-        this.userConfig = require('../config/user-config');
+        // this.userConfig = require('../config/user-config');
         this.userModel = require('../models/users')
     }
 
-    checkUserCredentials(email, password){
+    async checkUserCredentials(email, password){
 
         //create database query and check from database
+        try{
+            let user = await this.userModel.findOne({email: email})
 
-        if(email != this.userConfig.email){
-            return {
-                status: false,
-                message: 'Email not verified!',
+            if(user == null){
+                return {
+                    status: false,
+                    message: 'Email not verified!',
+                }
+            }
+            else if(password != user.password){
+                return {
+                    status: false,
+                    message: 'Invalid Password!',
+                }
+            }
+            else if(email === user.email && password === user.password){
+                return {
+                    status: true,
+                    message: 'User verified'
+                }
+            }
+            else
+            {
+                return {
+                    status: false,
+                    message: 'Invalid Credentials'
+                }
             }
         }
-        else if(password != this.userConfig.password){
-            return {
-                status: false,
-                message: 'Invalid Password!',
+        catch(err){
+            console.log(err);
             }
-        }
-        else if(email === this.userConfig.email && password === this.userConfig.password){
-            return {
-                status: true,
-                message: 'User verified'
-            }
-        }
-        else
-        {
-            return {
-                status: false,
-                message: 'Invalid Credentials'
-            }
-        }
     }
 
     async createUser(userData){

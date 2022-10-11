@@ -2,6 +2,7 @@ class IndexRoute{
     constructor(){ 
         this.router = require("express").Router()
         this.userController = require('../controllers/user-controller');
+        this.jobController = require('../controllers/job-controller');
         this.setRoutes()
     } 
  
@@ -13,9 +14,15 @@ class IndexRoute{
             }) 
         })
         
-        this.router.post('/verify-user',this.userController.verifyUser.bind(this.userController))   //done
+        this.router.post('/verify-user',this.userController.verifyUser.bind(this.userController))
 
-        this.router.post('/create-user',this.userController.createUser.bind(this.userController))   //done
+        this.router.post('/create-user',this.userController.createUser.bind(this.userController))
+
+        this.router.post('/create-job',this.jobController.createJobs.bind(this.jobController))
+
+        this.router.patch('/update-job',this.jobController.updateJobs.bind(this.jobController))
+
+        this.router.delete('/delete-job',this.jobController.deleteJobs.bind(this.jobController))    //done
 
         // this.router.get('/find-user',this.userController.findUser.bind(this.userController))  //done
 
