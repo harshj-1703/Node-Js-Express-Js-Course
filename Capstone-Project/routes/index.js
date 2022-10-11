@@ -13,7 +13,7 @@ class IndexRoute{
             }) 
         })
         
-        // this.router.post('/verify-user',this.userController.verifyUser.bind(this.userController))   //done
+        this.router.post('/verify-user',this.userController.verifyUser.bind(this.userController))   //done
 
         this.router.post('/create-user',this.userController.createUser.bind(this.userController))   //done
 

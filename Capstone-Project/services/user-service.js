@@ -1,39 +1,39 @@
 class UserService{
     constructor(){
-        // this.userConfig = require('../config/user-config');
+        this.userConfig = require('../config/user-config');
         this.userModel = require('../models/users')
     }
 
-    // checkUserCredentials(email, password){
+    checkUserCredentials(email, password){
 
-    //     //create database query and check from daatabase
+        //create database query and check from database
 
-    //     if(email != this.userConfig.email){
-    //         return {
-    //             status: false,
-    //             message: 'Email not verified!',
-    //         }
-    //     }
-    //     else if(password != this.userConfig.password){
-    //         return {
-    //             status: false,
-    //             message: 'Invalid Password!',
-    //         }
-    //     }
-    //     else if(email === this.userConfig.email && password === this.userConfig.password){
-    //         return {
-    //             status: true,
-    //             message: 'User varified'
-    //         }
-    //     }
-    //     else
-    //     {
-    //         return {
-    //             status: false,
-    //             message: 'Invalid Credentials'
-    //         }
-    //     }
-    // }
+        if(email != this.userConfig.email){
+            return {
+                status: false,
+                message: 'Email not verified!',
+            }
+        }
+        else if(password != this.userConfig.password){
+            return {
+                status: false,
+                message: 'Invalid Password!',
+            }
+        }
+        else if(email === this.userConfig.email && password === this.userConfig.password){
+            return {
+                status: true,
+                message: 'User verified'
+            }
+        }
+        else
+        {
+            return {
+                status: false,
+                message: 'Invalid Credentials'
+            }
+        }
+    }
 
     async createUser(userData){
         try{
