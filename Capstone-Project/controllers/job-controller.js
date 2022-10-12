@@ -14,10 +14,10 @@ class JobController{
                 description: req.body.description,
                 salary: req.body.salary,
                 experience: req.body.experience,
-                usertype: req.body.usertype,
+                isadmin: req.body.isadmin,
             }
             console.log("jobData", jobData);
-            if(jobData.usertype == 'admin')
+            if(jobData.isadmin == true)
             {
                 let queryResponse = await this.jobservice.createJobs(jobData);
                 if(queryResponse.status)
@@ -56,8 +56,8 @@ class JobController{
     {
         try{
             let jobId = req.body._id
-            let usertype = req.body.usertype
-            if(usertype == 'admin')
+            let isadmin = req.body.isadmin
+            if(isadmin == true)
             {
                 let deleteJob = await this.jobservice.deleteJobs(jobId)
                 if(deleteJob.status)
@@ -95,8 +95,8 @@ class JobController{
     async updateJobs(req, res)
     {
         try{
-            let usertype = req.body.usertype
-            if(usertype == 'admin')
+            let isadmin = req.body.isadmin
+            if(isadmin == true)
             {
                 let updateJobs = await this.jobservice.updateJobs(req.body)
                 if(updateJobs.status)

@@ -19,10 +19,10 @@ var userSchema = new mongoose.Schema({
         maxLength: 10,
         required: true,
     },
-    usertype : {
-        type: String,
+    isadmin : {
+        type: Boolean,
         required: true,
-        default: 'user',
+        default: false,
     },
 })
 
