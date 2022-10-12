@@ -32,6 +32,7 @@ class UserController{
                 email: req.body.email,
                 password: req.body.password,
                 mobile_number: req.body.mobile_number,
+                // usertype: req.body.usertype,
             }
             console.log("userData", userData);
             let queryResponse = await this.userservice.createUser(userData);

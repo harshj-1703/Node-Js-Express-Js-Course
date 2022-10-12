@@ -19,6 +19,11 @@ var userSchema = new mongoose.Schema({
         maxLength: 10,
         required: true,
     },
+    usertype : {
+        type: String,
+        required: true,
+        default: 'user',
+    },
 })
 
 module.exports = mongoose.model("users",userSchema)
