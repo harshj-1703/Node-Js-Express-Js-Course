@@ -22,6 +22,12 @@ class UserService{
                     message: 'Invalid Password!',
                 }
             }
+            else if(email === user.email && password === user.password && user.usertype == 'admin'){
+                return {
+                    status: true,
+                    message: 'Admin verified'
+                }
+            }
             else if(email === user.email && password === user.password){
                 return {
                     status: true,
