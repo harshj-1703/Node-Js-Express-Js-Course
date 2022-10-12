@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIGN-IN</title>
+</head>
+<body>
+    <form class="signinform">
+        <label for="name">NAME</label>
+        <input type="text" name="name"><br><br>
+        <label for="email">EMAIL</label>
+        <input type="email" name="email"><br><br>
+        <label for="password">PASSWORD</label>
+        <input type="password" name="password"><br><br>
+        <label for="mobile_number">MOBILE NUMBER</label>
+        <input type="number" name="mobile_number" maxlength="10" minlength="10"><br><br>
+        <input type="submit">
+    </form>
+</body>
+</html>
+
+<script>
+    const signinform = document.querySelector('.signinform');
+
+    signinform.addEventListener('submit', event => {
+        event.preventDefault();
+
+        const formData = new FormData(signinform);
+        const data = Object.fromEntries(formData);
+
+        fetch('localhost:2400/create-job/',{
+            method: 'POST',
+            headers: {
+                'Content-type' : 'application/json'
+            },
+            body: JSON.stringify(data)
+        }).then(res => res.json())
+            .then(data => console.log(data))
+            .catch(error => console.log(error));
+
+    });
+
+</script>
