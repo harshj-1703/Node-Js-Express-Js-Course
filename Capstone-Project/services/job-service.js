@@ -79,6 +79,29 @@ class JobService{
             }
         }
     }
+
+    async getAllUsers()
+    {
+        try{
+            //find method
+            let allJobs = await this.jobModel.find().lean()
+
+            //agregate function
+
+
+            return {
+                status: true,
+                data: allJobs,
+            }
+        }
+        catch(err){
+            console.log(err);
+            return{
+                status: false,
+                message: 'Error in services while all jobs',
+            }
+        }
+    }
 }
 
 module.exports = new JobService();

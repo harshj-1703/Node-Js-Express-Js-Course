@@ -26,7 +26,7 @@ class IndexRoute{
 
         // this.router.get('/find-user',this.userController.findUser.bind(this.userController))  //done
 
-        // this.router.get('/all-users',this.userController.getuser.bind(this.userController)) //no-need code
+        this.router.get('/all-jobs',this.jobController.getJobs.bind(this.jobController)) //no-need code
 
         // this.router.delete('/delete-users',this.userController.deleteUser.bind(this.userController))    //done
 

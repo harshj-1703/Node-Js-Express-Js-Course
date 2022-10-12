@@ -130,6 +130,34 @@ class JobController{
             }
         }
     }
+
+    async getJobs(req, res)
+    {
+        try{
+            let allJobs = await this.jobservice.getAllUsers()
+            if(allJobs.status)
+            {
+                res.status(200).send({
+                    status: true,
+                    data: allJobs.data,
+                })
+            }
+            else
+            {
+                res.status(400).send({
+                    status: false,
+                    message: 'Error in collecting all Jobs',
+                })
+            }
+        }
+        catch(err){
+            console.log(err);
+            return{
+                status: false,
+                message: 'error in controller while collecting all jobs',
+            }
+        }
+    }
 }
 
 module.exports = new JobController();
