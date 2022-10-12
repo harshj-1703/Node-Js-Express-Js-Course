@@ -158,6 +158,34 @@ class JobController{
             }
         }
     }
+
+    async findJob(req, res){
+        try{
+            // let email = req.params.email
+            let findJob = await this.jobservice.findJob(req.body._id)
+            if(findJob.status)
+            {
+                res.status(200).send({
+                    status: true,
+                    data: findJob.data,
+                })
+            }
+            else
+            {
+                res.status(400).send({
+                    status: false,
+                    message: 'Error in finding job',
+                })
+            }
+        }
+        catch(err){
+            console.log(err);
+            return{
+                status: false,
+                message: 'Finding in job controller error',
+            }
+        }
+    }
 }
 
 module.exports = new JobController();

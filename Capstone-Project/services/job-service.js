@@ -102,6 +102,33 @@ class JobService{
             }
         }
     }
+
+    async findJob(_id)
+    {
+        try{
+            //findOne function -> return singe document (if user exists) else it return null (if user not found)
+
+            let job = await this.jobModel.findOne({_id: _id})
+            // user["dob"] = new Date()
+            //find function -> return array of object (multiple document) else it will return [] (if no data found)
+
+
+
+            //.lean() -> Convert mongodb object document to plain javascript document
+
+            return {
+                status: true,
+                data: job,
+            }
+        }
+        catch(err){
+            console.log(err);
+            return{
+                status: false,
+                message: 'Error in services while finding job',
+            }
+        }
+    }
 }
 
 module.exports = new JobService();
