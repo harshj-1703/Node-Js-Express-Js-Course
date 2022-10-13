@@ -24,7 +24,7 @@ class IndexRoute{
 
         this.router.delete('/delete-job',this.jobController.deleteJobs.bind(this.jobController))    //done
 
-        this.router.get('/find-job',this.jobController.findJob.bind(this.jobController))  //done
+        this.router.get('/get-one-job',this.jobController.findJob.bind(this.jobController))  //done
 
         this.router.get('/all-jobs',this.jobController.getJobs.bind(this.jobController)) //no-need code
 
