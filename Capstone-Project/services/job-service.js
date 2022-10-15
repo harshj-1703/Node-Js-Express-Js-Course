@@ -151,26 +151,26 @@ class JobService{
         }
     }
 
-    // async sortJobSalary(sort)
-    // {
-    //     try{
-    //         //findOne function -> return singe document (if user exists) else it return null (if user not found)
+    async sortJobSalary(sort)
+    {
+        try{
+            let job = 0
+            //findOne function -> return singe document (if user exists) else it return null (if user not found)
+            job = await this.jobModel.find().lean().sort({salary : sort.salary,experience : sort.experience, _id : sort._id})
 
-    //         let job = await this.jobModel.find({_id : sort._id}).sort({_id : -1})
-
-    //         return {
-    //             status: true,
-    //             data: job,
-    //         }
-    //     }
-    //     catch(err){
-    //         console.log(err);
-    //         return{
-    //             status: false,
-    //             message: 'Error in services while sorting job',
-    //         }
-    //     }
-    // }
+            return {
+                status: true,
+                data: job,
+            }
+        }
+        catch(err){
+            console.log(err);
+            return{
+                status: false,
+                message: 'Error in services while sorting job',
+            }
+        }
+    }
 }
 
 module.exports = new JobService();
