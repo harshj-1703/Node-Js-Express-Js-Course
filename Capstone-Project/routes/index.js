@@ -30,7 +30,7 @@ class IndexRoute{
 
         this.router.get('/search-jobs',this.jobController.searchJobs.bind(this.jobController))
 
-        this.router.get('/sort-job-salary',this.jobController.sortJobsSalary.bind(this.jobController))
+        this.router.get('/sort-job-salary',this.jobController.sortJobs.bind(this.jobController))
 
         // this.router.delete('/delete-users',this.userController.deleteUser.bind(this.userController))    //done
 

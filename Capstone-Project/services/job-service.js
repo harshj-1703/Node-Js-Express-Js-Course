@@ -151,7 +151,7 @@ class JobService{
         }
     }
 
-    async sortJobSalary(sort)
+    async sortJob(sort)
     {
         try{
             let job = 0

@@ -215,10 +215,10 @@ class JobController{
         }
     }
 
-    async sortJobsSalary(req, res){
+    async sortJobs(req, res){
         try{
             // let email = req.params.email
-            let sortJob = await this.jobservice.sortJobSalary(req.body)
+            let sortJob = await this.jobservice.sortJob(req.body)
             if(sortJob.status)
             {
                 res.status(200).send({
