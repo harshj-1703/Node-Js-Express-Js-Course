@@ -1,0 +1,344 @@
+{
+	"info": {
+		"_postman_id": "e021f573-b61a-40e3-b909-c5846e228165",
+		"name": "NODEJS-EXPRESSJS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "localhost:2400/create-user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "bapu",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "12345678",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "admin@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "mobile_number",
+							"value": "1111111111",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:2400/create-user",
+					"host": [
+						"localhost"
+					],
+					"port": "2400",
+					"path": [
+						"create-user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:2400/verify-user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "bapu",
+							"type": "default"
+						},
+						{
+							"key": "password",
+							"value": "12345678",
+							"type": "default"
+						},
+						{
+							"key": "email",
+							"value": "admin@gmail.com",
+							"type": "default"
+						},
+						{
+							"key": "mobile_number",
+							"value": "1111111111",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:2400/verify-user",
+					"host": [
+						"localhost"
+					],
+					"port": "2400",
+					"path": [
+						"verify-user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:2400/create-job/",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"isadmin\": true,\r\n\"salary\" : \"2k\",\r\n\"description\" : \"very very nice\",\r\n\"title\" : \"i am very fine\",\r\n\"experience\" : \"4 years\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:2400/create-job/",
+					"host": [
+						"localhost"
+					],
+					"port": "2400",
+					"path": [
+						"create-job",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:2400/update-job/",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "isadmin",
+							"value": "true",
+							"type": "default"
+						},
+						{
+							"key": "_id",
+							"value": "63467094869f8ce151887894",
+							"type": "default"
+						},
+						{
+							"key": "description",
+							"value": "--------------------",
+							"type": "default"
+						},
+						{
+							"key": "salary",
+							"value": "1",
+							"type": "default"
+						},
+						{
+							"key": "experience",
+							"value": "1 year",
+							"type": "default"
+						},
+						{
+							"key": "title",
+							"value": "QAAAA",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:2400/update-job/",
+					"host": [
+						"localhost"
+					],
+					"port": "2400",
+					"path": [
+						"update-job",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:2400/delete-job",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "isadmin",
+							"value": "true",
+							"type": "default"
+						},
+						{
+							"key": "_id",
+							"value": "63467094869f8ce151887894",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:2400/delete-job",
+					"host": [
+						"localhost"
+					],
+					"port": "2400",
+					"path": [
+						"delete-job"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:2400/all-jobs",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "localhost:2400/all-jobs",
+					"host": [
+						"localhost"
+					],
+					"port": "2400",
+					"path": [
+						"all-jobs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:2400/get-detail-job/",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "_id",
+							"value": "634700116afa107a8e8b33e0",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:2400/get-detail-job/",
+					"host": [
+						"localhost"
+					],
+					"port": "2400",
+					"path": [
+						"get-detail-job",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:2400/search-jobs",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "title",
+							"value": "CE",
+							"type": "default"
+						},
+						{
+							"key": "salary",
+							"value": "1k",
+							"type": "default"
+						},
+						{
+							"key": "experience",
+							"value": "2 years",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:2400/search-jobs",
+					"host": [
+						"localhost"
+					],
+					"port": "2400",
+					"path": [
+						"search-jobs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:2400/sort-job-salary",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "salary",
+							"value": "1",
+							"type": "default"
+						},
+						{
+							"key": "experience",
+							"value": "-1",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:2400/sort-job-salary",
+					"host": [
+						"localhost"
+					],
+					"port": "2400",
+					"path": [
+						"sort-job-salary"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
