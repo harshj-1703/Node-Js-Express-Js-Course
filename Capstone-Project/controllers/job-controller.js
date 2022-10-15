@@ -134,7 +134,7 @@ class JobController{
     async getJobs(req, res)
     {
         try{
-            let allJobs = await this.jobservice.getAllUsers()
+            let allJobs = await this.jobservice.getAllJobs()
             if(allJobs.status)
             {
                 res.status(200).send({

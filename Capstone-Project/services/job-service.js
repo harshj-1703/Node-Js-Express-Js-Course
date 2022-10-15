@@ -80,7 +80,7 @@ class JobService{
         }
     }
 
-    async getAllUsers()
+    async getAllJobs()
     {
         try{
             //find method
