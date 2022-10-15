@@ -190,12 +190,12 @@ class JobController{
     async searchJobs(req, res){
         try{
             // let email = req.params.email
-            let sortJob = await this.jobservice.searchJob(req.body)
-            if(sortJob.status)
+            let searchJobs = await this.jobservice.searchJob(req.body)
+            if(searchJobs.status)
             {
                 res.status(200).send({
                     status: true,
-                    data: sortJob.data,
+                    data: searchJobs.data,
                 })
             }
             else
@@ -214,6 +214,34 @@ class JobController{
             }
         }
     }
+
+    // async sortJobsSalary(req, res){
+    //     try{
+    //         // let email = req.params.email
+    //         let sortJob = await this.jobservice.searchJob(req.body)
+    //         if(sortJob.status)
+    //         {
+    //             res.status(200).send({
+    //                 status: true,
+    //                 data: sortJob.data,
+    //             })
+    //         }
+    //         else
+    //         {
+    //             res.status(400).send({
+    //                 status: false,
+    //                 message: 'Error in sorting job',
+    //             })
+    //         }
+    //     }
+    //     catch(err){
+    //         console.log(err);
+    //         return{
+    //             status: false,
+    //             message: 'Sorting in job controller error',
+    //         }
+    //     }
+    // }
 }
 
 module.exports = new JobController();

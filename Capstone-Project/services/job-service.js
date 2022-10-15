@@ -130,12 +130,12 @@ class JobService{
         }
     }
 
-    async searchJob(sort)
+    async searchJob(search)
     {
         try{
             //findOne function -> return singe document (if user exists) else it return null (if user not found)
 
-            let job = await this.jobModel.find({title: sort.title, salary: sort.salary, experience: sort.experience})
+            let job = await this.jobModel.find({title: search.title, salary: search.salary, experience: search.experience})
 
             return {
                 status: true,
@@ -150,6 +150,27 @@ class JobService{
             }
         }
     }
+
+    // async sortJobSalary(sort)
+    // {
+    //     try{
+    //         //findOne function -> return singe document (if user exists) else it return null (if user not found)
+
+    //         let job = await this.jobModel.find({_id : sort._id}).sort({_id : -1})
+
+    //         return {
+    //             status: true,
+    //             data: job,
+    //         }
+    //     }
+    //     catch(err){
+    //         console.log(err);
+    //         return{
+    //             status: false,
+    //             message: 'Error in services while sorting job',
+    //         }
+    //     }
+    // }
 }
 
 module.exports = new JobService();
