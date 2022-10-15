@@ -22,11 +22,13 @@ class IndexRoute{
 
         this.router.patch('/update-job',this.jobController.updateJobs.bind(this.jobController))
 
-        this.router.delete('/delete-job',this.jobController.deleteJobs.bind(this.jobController))    //done
+        this.router.delete('/delete-job',this.jobController.deleteJobs.bind(this.jobController))
 
-        this.router.get('/get-detail-job',this.jobController.findJob.bind(this.jobController))  //done
+        this.router.get('/get-detail-job',this.jobController.findJob.bind(this.jobController))
 
-        this.router.get('/all-jobs',this.jobController.getJobs.bind(this.jobController)) //no-need code
+        this.router.get('/all-jobs',this.jobController.getJobs.bind(this.jobController))
+
+        this.router.get('/search-jobs',this.jobController.searchJobs.bind(this.jobController))
 
         // this.router.delete('/delete-users',this.userController.deleteUser.bind(this.userController))    //done
 

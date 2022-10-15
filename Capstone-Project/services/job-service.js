@@ -129,6 +129,27 @@ class JobService{
             }
         }
     }
+
+    async searchJob(sort)
+    {
+        try{
+            //findOne function -> return singe document (if user exists) else it return null (if user not found)
+
+            let job = await this.jobModel.find({title: sort.title, salary: sort.salary, experience: sort.experience})
+
+            return {
+                status: true,
+                data: job,
+            }
+        }
+        catch(err){
+            console.log(err);
+            return{
+                status: false,
+                message: 'Error in services while sorting job',
+            }
+        }
+    }
 }
 
 module.exports = new JobService();
